@@ -54,8 +54,6 @@ class PrototypesController < ApplicationController
   end
 
   def move_to_edit
-    unless user_signed_in?
-      redirect_to root_path
-    end
+      redirect_to root_path unless current_user == @prototype_user
   end
 end
